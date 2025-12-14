@@ -1,0 +1,390 @@
+/* ==UserStyle==
+
+@name           SpyCloud
+@namespace      https://github.com/HxnryLSD/library
+@version        1.0.3
+@description    SoundCloud modernized. Compatible with OLED and QLED. Enhanced visibility and distraction-free. Perfect for gaming while having SoundCloud open.
+
+@author         Spy
+@homepageURL  	https://feds.lol/spy
+@license      	MIT
+
+==/UserStyle== */
+@-moz-document domain("soundcloud.com") {
+  /*
+					ANYTHING IDK
+	*/
+  .playableTile__image > .image > .sc-artwork {
+    border-radius: 10px;
+  }
+  .sc-artwork.sc-artwork-placeholder-0,
+  .sc-artwork.sc-artwork-placeholder-1,
+  .sc-artwork.sc-artwork-placeholder-2,
+  .sc-artwork.sc-artwork-placeholder-3,
+  .sc-artwork.sc-artwork-placeholder-4,
+  .sc-artwork.sc-artwork-placeholder-5,
+  .sc-artwork.sc-artwork-placeholder-6,
+  .sc-artwork.sc-artwork-placeholder-7,
+  .sc-artwork.sc-artwork-placeholder-8,
+  .sc-artwork.sc-artwork-placeholder-9,
+  .sc-artwork.sc-artwork-placeholder-10,
+  .sc-artwork.sc-artwork-placeholder-11,
+  .sc-artwork.sc-artwork-placeholder-12 {
+    background-image: none;
+  }
+  .playControls__bg,
+  .playControls__inner {
+    background-color: hsla(0, 0%, 0%, 0.8);
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.7);
+  }
+  .sc-button.sc-button-secondary.sc-button-selected,
+  .sc-button.sc-button-secondary,
+  .sc-button.sc-button-secondary:visited {
+    background-color: transparent;
+  }
+  [href = "https://checkout.soundcloud.com/go?ref=t1350"],
+	[href = "https://checkout.soundcloud.com/artist?ref=t353"],
+	[href = "https://checkout.soundcloud.com/go?ref=t1022"],
+	[href = "https://checkout.soundcloud.com/artist?ref=t148"]
+  {
+    display: none !important;
+  }
+  .sc-mb-6x {
+    margin-bottom: 10px;
+  }
+  .collectionSection__filters {
+    display: none;
+  }
+
+  /*
+					ANIMATIONS
+	*/
+  .g-tabs-link {
+    transition: color 100ms ease-in-out, text-shadow 180ms ease-in-out;
+  }
+  .g-tabs-link:hover {
+    text-shadow: 0px 0px 20px hsla(0, 0%, 100%, 0.7);
+  }
+  .selected.sc-mr-1x.header__navMenuItem,
+  .selected.header__navMenuItem {
+    text-shadow: 0px 0px 12px hsla(0, 0%, 100%, 0.9);
+    box-shadow: inset 0px -13px 13px -10px hsla(0, 0%, 100%, 0.7);
+  }
+  .sc-button-responsive.sc-button-medium.sc-button.sc-button-secondary.sc-button-like,
+  .sc-button-responsive.sc-button-medium.sc-button.sc-button-secondary.sc-button-repost,
+  .sc-button-responsive.sc-button-icon.sc-button-medium.sc-button.sc-button-secondary.sc-button-copylink,
+  .sc-button-responsive.sc-button-icon.sc-button-medium.sc-button.sc-button-secondary.sc-button-more {
+    transition: all 150ms ease-in-out;
+  }
+
+  /*
+					ENHANCED VISIBILITY
+	*/
+  .m-interactive.sc-mb-6x.playableTile.audibleTile {
+    transition: filter 250ms ease-in-out;
+    filter: brightness(0.7) contrast(1.2) saturate(0.7);
+  }
+  .m-playing.m-interactive.sc-mb-6x.playableTile.audibleTile {
+    filter: none;
+  }
+  .m-playing.m-interactive.sc-mb-6x.playableTile.audibleTile
+    > .playableTile__artwork
+    > .playableTile__artworkLink
+    > .playableTile__image
+    > .sc-artwork
+    > .sc-artwork {
+    transition: box-shadow 480ms ease-in-out;
+    box-shadow: inset 0px 0px 0px 1px rgb(255, 255, 255),
+      0px 3px 64px 3px rgba(255, 255, 255, 0.8);
+  }
+  .sc-button-pause.sc-button-xxlarge.sc-button.playButton.sc-button-play {
+    background: hsla(0, 0%, 5%, 0.8);
+    border: 2px solid hsl(0, 0%, 60%);
+  }
+  .sc-button-icon.sc-button-secondary.sc-button-medium.sc-button.tileGallery__slideForwardButton.tileGallery__sliderButton {
+    background: #1b1b1b;
+  }
+  .sound__trackList {
+    border-radius: 12px;
+    background: var(--overlay-color);
+    margin-top: 10px;
+  }
+  .g-scrollable-v.g-scrollable.compactTrackList__listWrapper,
+  .compactTrackList__listWrapper {
+    border-radius: 12px 12px 0px 0px;
+    background: var(--background-highlight-color);
+    border: 1px solid #ffffff30;
+  }
+  .sc-button-selected.sc-button-responsive.sc-button-icon.sc-button-small.sc-button.sc-button-secondary.sc-button-like {
+    color: var(--font-special-color);
+  }
+  .oneLine.gritter-item-wrapper {
+    box-shadow: 0px 0px 20px 1px #000, 0px 0px 80px 2px rgba(255, 255, 255, 0.7);
+  }
+  .sc-button-pause svg {
+    color: #fff;
+  }
+  .playHistory {
+    border-radius: 12px;
+    background: var(--background-highlight-color);
+    border: 1px solid #ffffff30;
+    margin-bottom: 20px;
+  }
+  .g-flex-row-centered-spread.sc-mb-1x.sc-px-2x.sc-py-1x.collectionSection__top {
+    border-radius: 12px;
+    background: var(--background-highlight-color);
+    border: 1px solid #ffffff30;
+  }
+
+  /*
+					DARK THEME OVERWRITE
+	*/
+  .theme-dark {
+    /* --- HINTERGRÜNDE & OBERFLÄCHEN (OLED Optimiert) --- */
+    /* Surface ist jetzt Pitch Black für OLED */
+    --surface-color: #000;
+    --surface-rgb: 0, 0, 0;
+
+    /* Highlights sind jetzt das alte Dark-Surface (#121212), sehr subtil */
+    --highlight-color: #121212;
+    --highlight-rgb: 18, 18, 18;
+
+    --background-surface-color: #000000;
+    --background-highlight-color: #121212;
+
+    /* --- TEXT & PRIMÄRFARBEN --- */
+    --primary-color: #fff;
+    --primary-rgb: 255, 255, 255;
+    --secondary-color: #a0a0a0;
+    /* Etwas heller als #999 für besseren Kontrast auf Schwarz */
+    --secondary-rgb: 160, 160, 160;
+
+    /* Links jetzt Weiß/Monochrom statt Blau, für den "Clean Look" */
+    --link-color: #ffffff;
+    --link-rgb: 255, 255, 255;
+
+    --overlay-color: hsla(0, 0%, 20%, 0.5);
+    --overlay-rgb: 51, 51, 51, 0.5;
+    --imageBorder-color: hsla(0, 0%, 100%, 0.1);
+    /* Reduzierte Opazität */
+    --imageBorder-rgb: 255, 255, 255, 0.1;
+
+    /* --- ENTSÄTTIGTE BADGES (Monochrome Anpassung) --- */
+    /* Artist Farben (ehemals Lila/Gold) nun Dunkelgrau/Weiß */
+    --artist-color: #1a1a1a;
+    --artist-rgb: 26, 26, 26;
+    --artist-pro-color: #1a1a1a;
+    --artist-pro-rgb: 26, 26, 26;
+
+    --artist-surface-color: #ffffff;
+    --artist-surface-rgb: 255, 255, 255;
+    --artist-pro-surface-color: #e0e0e0;
+    --artist-pro-surface-rgb: 224, 224, 224;
+
+    /* Support Banner (ehemals Grün) nun Grau */
+    --support-bg-color: #1a1a1a;
+    --support-bg-rgb: 26, 26, 26;
+    --support-text-color: #e0e0e0;
+    --support-text-rgb: 224, 224, 224;
+    --support-hover-bg-color: #333333;
+    --support-hover-bg-rgb: 51, 51, 51;
+    --support-hover-text-color: #ffffff;
+    --support-hover-text-rgb: 255, 255, 255;
+
+    /* --- SCHRIFTARTEN --- */
+    --font-sans-serif-family: var(--font-main), system-ui, -apple-system,
+      Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, "Segoe UI",
+      Roboto, "Lucida Grande", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --font-monospace-family: "Monaco", "Courier New", monospace;
+
+    --font-light-color: #ffffff;
+    --font-dark-color: #000000;
+    --font-special-color: #f744ff;
+    /* Akzentfarbe beibehalten */
+    --font-error-color: #c465c8;
+    /* Material Design Error Farbe (angenehmer auf Schwarz) */
+    --font-primary-color: #ffffff;
+    --font-secondary-color: #828282;
+    --font-link-color: #ffffff;
+    /* Links weiß */
+    /* --- BUTTONS --- */
+    --button-light-background-color: #fff;
+    --button-light-font-color: #000000;
+    --button-dark-background-color: #000000;
+    --button-dark-font-color: #ffffff;
+
+    --button-special-background-color: #f744ff;
+    --button-special-font-color: #ffffff;
+    --button-focused-box-shadow: 0 0 0 2px #ffffff inset;
+    /* Fokus Weiß statt Blau */
+    --button-disabled-opacity: 0.4;
+    --button-active-opacity: 0.4;
+
+    /* Primary Buttons (Play etc.) */
+    --button-primary-background-color: #1f1f1f;
+    --button-primary-font-color: #fff;
+    --button-primary-hover-font-color: rgba(0, 0, 0, 0.6);
+    --button-primary-disabled-background-color: #333333;
+    --button-primary-disabled-font-color: #888888;
+
+    --button-primary-selected-background-color: #1a1a1a;
+    --button-primary-selected-font-color: #ffffff;
+    --button-primary-selected-hover-font-color: hsla(0, 0%, 100%, 0.6);
+    --button-primary-selected-active-font-color: #ffffff;
+    --button-primary-selected-active-background-color: #1a1a1a;
+
+    --button-primary-loading-background-color: #ffffff;
+    --button-primary-loading-font-color: rgba(0, 0, 0, 0.6);
+    --button-primary-loading-icon-color: #000000;
+    --button-primary-active-background-color: #e0e0e0;
+    --button-primary-active-font-color: #000000;
+
+    /* Secondary Buttons */
+    --button-secondary-background-color: #1a1a1a;
+    /* Dunkleres Grau */
+    --button-secondary-font-color: #acacac;
+    --button-secondary-hover-font-color: hsl(0, 0%, 100%);
+    --button-secondary-disabled-background-color: #000000;
+    --button-secondary-disabled-font-color: #666666;
+
+    --button-secondary-selected-background-color: #1a1a1a;
+    --button-secondary-selected-font-color: #fff;
+    --button-secondary-selected-hover-font-color: rgba(255, 255, 255, 0.6);
+    --button-secondary-selected-active-background-color: #1a1a1a;
+    --button-secondary-selected-active-font-color: #fff;
+
+    --button-secondary-loading-background-color: #1a1a1a;
+    --button-secondary-loading-font-color: hsla(0, 0%, 100%, 0.6);
+    --button-secondary-loading-icon-color: #ffffff;
+    --button-secondary-active-background-color: #1a1a1a;
+    --button-secondary-active-font-color: #ffffff;
+
+    /* Tertiary Buttons */
+    --button-tertiary-background-color: #000000;
+    --button-tertiary-font-color: #ffffff;
+    --button-tertiary-hover-font-color: hsla(0, 0%, 100%, 0.6);
+    --button-tertiary-disabled-background-color: #000000;
+    --button-tertiary-disabled-font-color: #666666;
+
+    --button-tertiary-selected-background-color: #000000;
+    --button-tertiary-selected-font-color: #f744ff;
+    --button-tertiary-selected-hover-font-color: rgba(247, 68, 255, 0.6);
+    --button-tertiary-selected-active-background-color: #000000;
+    --button-tertiary-selected-active-font-color: #f744ff;
+
+    --button-tertiary-loading-background-color: #000000;
+    --button-tertiary-loading-font-color: hsla(0, 0%, 100%, 0.6);
+    --button-tertiary-loading-icon-color: #ffffff;
+    --button-tertiary-active-background-color: #000000;
+    --button-tertiary-active-font-color: #ffffff;
+
+    --overlay-default-color: hsla(0, 0%, 100%, 0.4);
+
+    /* --- LINKS (Monochrome Anpassung) --- */
+    --link-standard-color: #ffffff;
+    /* Weiß statt Blau */
+    --link-standard-focus-outline: none;
+    --link-standard-focus-box-shadow: 0 0 0 2px #ffffff;
+    --link-standard-text-decoration: none;
+    --link-standard-active-color: rgba(255, 255, 255, 0.6);
+    --link-standard-hover-color: #ffffff;
+    --link-standard-hover-text-decoration: underline;
+    --link-standard-border-radius: 4px;
+    --link-standard-disabled-color: rgba(255, 255, 255, 0.4);
+
+    --link-primary-color: #ffffff;
+    --link-primary-focus-box-shadow: 0 0 0 2px #ffffff;
+    --link-primary-disabled-color: hsla(0, 0%, 100%, 0.4);
+    --link-primary-active-color: hsla(0, 0%, 100%, 0.6);
+    --link-primary-hover-color: hsla(0, 0%, 100%, 0.6);
+    --link-primary-hover-text-decoration: none;
+    --link-primary-border-radius: 4px;
+
+    --link-secondary-color: #606060;
+    --link-secondary-focus-box-shadow: 0 0 0 2px #ffffff;
+    --link-secondary-disabled-color: hsla(0, 0%, 60%, 0.4);
+    --link-secondary-active-color: hsla(0, 0%, 60%, 0.6);
+    --link-secondary-hover-color: hsla(0, 0%, 60%, 0.8);
+    --link-secondary-hover-text-decoration: none;
+    --link-secondary-border-radius: 4px;
+
+    /* --- TAGS & INPUTS --- */
+    --tag-body-height: 24px;
+    --tag-body-padding: 2px 8px;
+    --tag-body-cursor: pointer;
+    --tag-body-border-radius: 100px;
+    --tag-body-user-select: none;
+    --tag-body-touch-callout: none;
+    --tag-body-white-space: nowrap;
+    --tag-body-hover-text-decoration: none;
+    --tag-disabled-opacity: 60%;
+    --tag-focused-box-shadow: 0 0 0 2px #ffffff inset;
+    --tag-focused-outline: none;
+
+    --tag-default-background-color: #1a1a1a;
+    --tag-default-font-color: #ffffff;
+    --tag-default-font-hover-color: hsla(0, 0%, 100%, 0.6);
+    --tag-selected-background-color: #ffffff;
+    --tag-selected-font-color: #000000;
+    --tag-selected-font-hover-color: rgba(0, 0, 0, 0.6);
+
+    --input-default-background-color: #121212;
+    /* Sehr dunkel, fast Schwarz */
+    --input-default-font-color: #ffffff;
+    --input-placeholder-background-color: #121212;
+    --input-placeholder-font-color: #666666;
+    --input-focused-background-color: #121212;
+    --input-focused-border-color: #ffffff;
+    --input-focused-font-color: #ffffff;
+    --input-invalid-background-color: #1a1a1a;
+    --input-disabled-background-color: hsla(0, 0%, 100%, 0.1);
+    --input-disabled-font-color: #888888;
+
+    /* --- TOGGLES --- */
+    --toggle-focused-box-shadow: 0 0 0 2px #ffffff;
+    --toggle-disabled-opacity: 60%;
+    --toggle-body-width: 40px;
+    --toggle-body-height: 24px;
+    --toggle-body-border-radius: 16px;
+    --toggle-body-cursor: pointer;
+    --toggle-body-user-select: none;
+    --toggle-body-transition: all 0.2s;
+
+    --toggle-handle-height: 20px;
+    --toggle-handle-width: 20px;
+    --toggle-handle-border-radius: 50px;
+    --toggle-handle-left: 2px;
+    --toggle-handle-top: 2px;
+    --toggle-handle-z-index: 1;
+    --toggle-handle-transition: all 0.2s;
+
+    --toggle-icon-on-opacity: 0;
+    --toggle-icon-left: 50%;
+    --toggle-icon-top: 50%;
+    --toggle-icon-transform: translate(-50%, -50%);
+    --toggle-icon-transition: opacity 0.2s;
+
+    --toggle-on-body-color: #f744ff;
+    /* Orange bleibt für ON-Status */
+    --toggle-on-body-hover-color: #f744ff;
+    --toggle-on-body-opacity: 1;
+    --toggle-on-body-transition: opacity 0.2s;
+
+    --toggle-on-handle-color: #000000;
+    --toggle-on-handle-hover-color: rgba(0, 0, 0, 0.6);
+    --toggle-on-handle-left: 18px;
+
+    --toggle-on-icon-off-opacity: 0;
+    --toggle-on-icon-on-opacity: 1;
+
+    --toggle-off-body-color: #333333;
+    --toggle-off-body-hover-color: #444444;
+    --toggle-off-body-opacity: 0;
+
+    --toggle-off-handle-color: #ffffff;
+    --toggle-off-handle-hover-color: #e0e0e0;
+
+    --special-color: #f744ff;
+  }
+}
