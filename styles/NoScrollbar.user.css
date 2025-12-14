@@ -1,0 +1,26 @@
+/* ==UserStyle==
+
+@name           No Scrollbar
+@namespace      https://github.com/HxnryLSD/library
+@version        1.0.0
+@description    Hides the scrollbar for a cleaner look. Easy as that.
+
+@author         Spy
+@homepageURL  	https://feds.lol/spy
+@license      	MIT
+
+==/UserStyle== */
+@-moz-document url-prefix("http") {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  html::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  html {
+    -ms-overflow-style: none !important;
+    /* IE and Edge */
+    scrollbar-width: none !important;
+    /* Firefox */
+  }
+}
